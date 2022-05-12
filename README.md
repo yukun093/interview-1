@@ -1250,7 +1250,7 @@ class doSomething(Flyable *obj)                 // 做些事情
 容器 | 底层数据结构 | 时间复杂度 | 有无序 | 可不可重复 | 其他
 ---|---|---|---|---|---
 [array](https://github.com/huihut/interview/tree/master/STL#array)|数组|随机读改 O(1)|无序|可重复|支持快速随机访问
-[vector](https://github.com/huihut/interview/tree/master/STL#vector)|数组|随机读改、尾部插入、尾部删除 O(1)<br/>头部插入、头部删除 O(n)|无序|可重复|支持快速随机访问
+[vector](https://github.com/huihut/interview/tree/master/STL#vector)|数组|随机读改、尾部插入、尾部删除 O(1)<br/>头部插入、头部删除 O(n)|无序|可重复|支持快速随机访问(vector其中的push_back和emplace_back的区别，push_back向容器尾部添加元素时，首先创建这个元素，然后再将元素拷贝或者移动到容器中（如果是拷贝的话，则需要自行销毁先前创建的这个元素）；而emplace_back()在实现时，则直接在容器尾部创建这个元素，省去了拷贝或移动元素的这个过程
 [list](https://github.com/huihut/interview/tree/master/STL#list)|双向链表|插入、删除 O(1)<br/>随机读改 O(n)|无序|可重复|支持快速增删
 [deque](https://github.com/huihut/interview/tree/master/STL#deque)|双端队列|头尾插入、头尾删除 O(1)|无序|可重复|一个中央控制器 + 多个缓冲区，支持首尾快速增删，支持随机访问
 [stack](https://github.com/huihut/interview/tree/master/STL#stack)|deque / list|顶部插入、顶部删除 O(1)|无序|可重复|deque 或 list 封闭头端开口，不用 vector 的原因应该是容量大小有限制，扩容耗时
