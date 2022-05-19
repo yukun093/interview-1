@@ -1250,10 +1250,10 @@ class doSomething(Flyable *obj)                 // 做些事情
 容器 | 底层数据结构 | 时间复杂度 | 有无序 | 可不可重复 | 其他
 ---|---|---|---|---|---
 [array](https://github.com/huihut/interview/tree/master/STL#array)|数组|随机读改 O(1)|无序|可重复|支持快速随机访问
-[vector](https://github.com/huihut/interview/tree/master/STL#vector)|数组|随机读改、尾部插入、尾部删除 O(1)<br/>头部插入、头部删除 O(n)|无序|可重复|支持快速随机访问(vector其中的push_back和emplace_back的区别，push_back向容器尾部添加元素时，首先创建这个元素，然后再将元素拷贝或者移动到容器中（如果是拷贝的话，则需要自行销毁先前创建的这个元素）；而emplace_back()在实现时，则直接在容器尾部创建这个元素，省去了拷贝或移动元素的这个过程
+[vector](https://github.com/huihut/interview/tree/master/STL#vector)|数组|随机读改、尾部插入、尾部删除 O(1)<br/>头部插入、头部删除 O(n)|无序|可重复|支持快速随机访问(vector其中的push_back和emplace_back的区别，push_back向容器尾部添加元素时，首先创建这个元素，然后再将元素拷贝或者移动到容器中（如果是拷贝的话，则需要自行销毁先前创建的这个元素）；而emplace_back()在实现时，则直接在容器尾部创建这个元素，省去了拷贝或移动元素的这个过程<br/>vector在堆区开辟空间，使用链表时，需要对其占用的空间进行及时释放，AddressSanitizer是一个避免内存溢出的检测器
 [list](https://github.com/huihut/interview/tree/master/STL#list)|双向链表|插入、删除 O(1)<br/>随机读改 O(n)|无序|可重复|支持快速增删
 [deque](https://github.com/huihut/interview/tree/master/STL#deque)|双端队列|头尾插入、头尾删除 O(1)|无序|可重复|一个中央控制器 + 多个缓冲区，支持首尾快速增删，支持随机访问
-[stack](https://github.com/huihut/interview/tree/master/STL#stack)|deque / list|顶部插入、顶部删除 O(1)|无序|可重复|deque 或 list 封闭头端开口，不用 vector 的原因应该是容量大小有限制，扩容耗时
+[stack](https://github.com/huihut/interview/tree/master/STL#stack)|deque / list|顶部插入、顶部删除 O(1)|无序|可重复|deque 或 list 封闭头端开口，不用 vector 的原因应该是容量大小有限制，扩容耗时。<br/>stack的pop()和top()作用，top()用于弹出栈，pop()用于删除顶部元素
 [queue](https://github.com/huihut/interview/tree/master/STL#queue)|deque / list|尾部插入、头部删除 O(1)|无序|可重复|deque 或 list 封闭头端开口，不用 vector 的原因应该是容量大小有限制，扩容耗时
 [priority_queue](https://github.com/huihut/interview/tree/master/STL#priority_queue)|vector + max-heap|插入、删除 O(log<sub>2</sub>n)|有序|可重复|vector容器+heap处理规则
 [set](https://github.com/huihut/interview/tree/master/STL#set)|红黑树|插入、删除、查找 O(log<sub>2</sub>n)|有序|不可重复|unordered_set() 常用于滑动窗口的求最大不重复子字符串
