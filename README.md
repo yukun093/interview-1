@@ -2279,6 +2279,28 @@ TCP 是一个基于字节流的传输服务（UDP 基于报文的），“流”
 
 ##### TCP 三次握手建立连接
 
+添加理解：
+
+建立两服务器之间的连接： exec 22<> /dev/tcp/www.baidu.com/80
+
+发送http协议：echo "GET / HTTP1.0\n" 
+
+识别：echo  -e  "GET / HTTP1.0\n"  1>& 22
+
+传输控制层：TCP面向连接的可靠的传输 -->连接-->三次握手
+
+三次握手过程是 syn, syn+ack, ack
+
+![image-20220612222842390](C:\Users\yuyuk\AppData\Roaming\Typora\typora-user-images\image-20220612222842390.png)
+
+三次握手：通信是双向的，首先客户端（local）发送包（信息）到服务端（服务器），等待回应，回应已接受到包。
+
+
+
+
+
+
+
 ![UDP 报文](images/TCP三次握手建立连接.png)
 
 【TCP 建立连接全过程解释】
