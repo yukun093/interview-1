@@ -3226,3 +3226,9 @@ int main( void )
 ### Segmentfault
 
 * [segmentfault . C++常见面试问题总结](https://segmentfault.com/a/1190000003745529)
+
+
+
+Amention fron yukun:
+
+set与map的区别: c++中set的value不能修改,但map中的value允许修改
